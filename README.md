@@ -1,2 +1,4 @@
 # cartpole_ifopt
- Cartpole Swing up problem using IFOPT and Control Toolbox
+ Cartpole swing up problem trajectory optimization using IFOPT
+
+The cartpole swing up problem is solved using [direct collocation (trapezoidal) method](https://epubs.siam.org/doi/pdf/10.1137/16M1062569). The dynamics were modeled analytically using [Control Toolbox](https://github.com/ethz-adrl/control-toolbox). Jacobians for dynamics were evaluated using auto differentiation (CppAD) and code for jacoboan were generated. The NLP problem was formulated using [IFOPT](https://github.com/ethz-adrl/ifopt). Jacobian sparsity pattern was provided analytically for faster computation. Second order derivative of cost and constraint (a.k.a Hessian of the Lagrangian) was left for the underlaying [IPOPT](https://coin-or.github.io/Ipopt/index.html) solver to approximate using quasi-Newton options.
